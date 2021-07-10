@@ -1,0 +1,68 @@
+﻿@model PagedList.IPagedList<KetNoiCSDL.EF.User>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Danh sách Người dùng</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        @using (Html.BeginForm("Index", "User", FormMethod.Get))
+        {
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-md-offset-0">
+                        <input type="text" name="searchString" value="@ViewBag.ChuoiTimKiem" />
+                        <input type="submit" value="Tìm kiếm" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        }
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Tài khoản</th>
+                    <th>Tên</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="User/Edit/@item.ID">Sửa</a>
+                            |
+                            @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
+                            {
+                                Confirm = "Bạn có muốn xóa người dùng này?",
+                            OnComplete = "$('#row_" + item.ID + "').remove()",
+                            HttpMethod = "Delete"
+                            })
+                        </td>
+                        <td>@item.UserName</td>
+                        <td>@item.Name</td>
+                        <td>@item.Email</td>
+                        <td>@item.Phone</td>
+                        <td>@item.Status</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @Html.PagedListPager(Model, page => Url.Action("Index", new
+        {
+            page,
+       @searchString = ViewBag.ChuoiTimKiem
+   }))
+    </div>
+    <!-- /.table-responsive -->
+</div>
+<!-- /.panel-body -->
