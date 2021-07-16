@@ -205,6 +205,7 @@
     <Content Include="Areas\Admin\assets\admin\dist\js\pages\dashboard.js" />
     <Content Include="Areas\Admin\assets\admin\dist\js\pages\dashboard2.js" />
     <Content Include="Areas\Admin\assets\admin\dist\js\pages\dashboard3.js" />
+    <Content Include="Areas\Admin\assets\admin\js1\Controller\userControllert.js" />
     <Content Include="Areas\Admin\assets\admin\js1\Plugins\bin\Debug\CKFinder.dll" />
     <Content Include="Areas\Admin\assets\admin\js1\Plugins\bin\Debug\CKFinder.pdb" />
     <Content Include="Areas\Admin\assets\admin\js1\Plugins\bin\Debug\CKFinder_FileEditor.dll" />

@@ -87,5 +87,17 @@ namespace WebMVC.Areas.Admin.Controllers
             var user = new UserDao().Delete(id);
             return RedirectToAction("Index");
         }
+        [HttpPost]
+        public JsonResult changeStatus(long id)
+        {
+            var result = new UserDao().changeStatus(id);
+            return Json(new
+            {
+
+                status = result
+
+            });
+        }
     }
+
 }

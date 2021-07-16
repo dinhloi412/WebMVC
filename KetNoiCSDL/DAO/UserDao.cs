@@ -96,5 +96,12 @@ namespace KetNoiCSDL.DAO
                 return false;
             }
         }
+        public bool changeStatus(long id)
+        {
+            var user = db.Users.Find(id);
+            user.Status = !user.Status;
+            db.SaveChanges();
+            return user.Status;
+        }
     }
 }

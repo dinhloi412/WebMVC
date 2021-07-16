@@ -4,7 +4,10 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+@section jsfooter{
 
+    <script src="~/Areas/Admin/assets/admin/js1/Controller/userControllert.js"></script>
+}
 
 <div class="card">
     <div class="card-header">
@@ -26,18 +29,26 @@
         <table id="example2" class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>#</th>
+
                     <th>Tài khoản</th>
                     <th>Tên</th>
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Trạng thái</th>
+                    <th>#</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
                     <tr>
+
+                        <td>@item.UserName</td>
+                        <td>@item.Name</td>
+                        <td>@item.Email</td>
+                        <td>@item.Phone</td>
+
+                        <td><a href="#" class="btn-active" data-id="@item.ID">@(item.Status? "Kích hoạt" : "Khoá")</a></td>
                         <td>
                             <a href="User/Edit/@item.ID">Sửa</a>
                             |
@@ -48,11 +59,6 @@
                             HttpMethod = "Delete"
                             })
                         </td>
-                        <td>@item.UserName</td>
-                        <td>@item.Name</td>
-                        <td>@item.Email</td>
-                        <td>@item.Phone</td>
-                        <td>@item.Status</td>
                     </tr>
                 }
             </tbody>
