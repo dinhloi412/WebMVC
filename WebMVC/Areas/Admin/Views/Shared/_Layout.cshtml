@@ -857,6 +857,12 @@
             </div>
             <!-- /.content-header -->
             <!-- Main content -->
+            @if (TempData["AlertMessage"] != null)
+            {
+                <div id="AlertBox" class="alert @TempData["AlertType"] hide">
+                    @TempData["AlertMessage"]
+                </div>
+            }
             @RenderBody()
 
             <!-- ./wrapper -->
@@ -879,6 +885,7 @@
             <script src="~/Areas/Admin/assets/admin/dist/js/pages/dashboard3.js"></script>
             <script src="~/Areas/Admin/assets/admin/js1/Plugins/ckfinder.js"></script>
             <script src="~/Areas/Admin/assets/admin/js1/Plugins/ckeditor/ckeditor.js"></script>
+            <script src="~/Areas/Admin/assets/admin/js1/Controller/Alert.js"></script>
             @RenderSection("jsFooter", required: false)
 </body>
 </html>

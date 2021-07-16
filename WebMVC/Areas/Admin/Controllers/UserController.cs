@@ -9,7 +9,7 @@ using WebMVC.Common;
 
 namespace WebMVC.Areas.Admin.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         // GET: Admin/User
         public ActionResult Index(string searchString, int page = 1, int pageSize = 5)
@@ -39,18 +39,19 @@ namespace WebMVC.Areas.Admin.Controllers
                 user.Password = MhMd5;
                 if (db.Users.Any(x => x.UserName == user.UserName))
                 {
-                    ModelState.AddModelError("ThongBaoTrungUserName", "Tên đăng nhập này đã tồn tại");
+                    SetAlert("Tên đăng nhập này đã tồn tại", "error");
                 }
                 else
                 {
                     long id = dao.Insert(user);
                     if (id > 0)
                     {
+                        SetAlert("Thêm User thành công", "success");
                         return RedirectToAction("Index", "User");
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Thêm user không thành công.");
+                        SetAlert("Thêm User không thành công", "error");
                     }
                 }
 
