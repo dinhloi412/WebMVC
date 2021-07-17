@@ -28,7 +28,7 @@ namespace KetNoiCSDL.EF
         public virtual DbSet<SystemConfig> SystemConfigs { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<User> Users { get; set; }
-       
+        public object Product { get; internal set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

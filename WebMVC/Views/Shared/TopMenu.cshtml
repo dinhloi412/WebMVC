@@ -1,0 +1,13 @@
+﻿@model List<KetNoiCSDL.EF.Menu>
+<div class="header-bottom-set dropdown">
+    <button class="dropdown-toggle header-action-btn" data-bs-toggle="dropdown">
+        <i class="pe-7s-users"></i>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-right">
+        @foreach (var item in Model)
+        {
+            <li><a class="dropdown-item" href="@item.Link" target="@item.Target">@item.Text</a></li>
+        }
+
+    </ul>
+</div>

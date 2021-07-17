@@ -2,9 +2,11 @@ namespace KetNoiCSDL.EF
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web;
 
     [Table("Product")]
     public partial class Product
@@ -22,9 +24,12 @@ namespace KetNoiCSDL.EF
 
         [StringLength(500)]
         public string Description { get; set; }
-
-        [StringLength(250)]
+     
+        [DisplayName("Upload Image")]
         public string Image { get; set; }
+        [NotMapped]
+        public HttpPostedFileBase ImageFile { get; set; }
+     
 
         [Column(TypeName = "xml")]
         public string MoreImages { get; set; }
@@ -60,10 +65,11 @@ namespace KetNoiCSDL.EF
         [StringLength(250)]
         public string MetaDescription { get; set; }
 
-        public bool? Status { get; set; }
+        public bool Status { get; set; }
 
         public DateTime? TopHot { get; set; }
 
         public int? ViewCount { get; set; }
+
     }
 }
