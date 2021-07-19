@@ -14,15 +14,26 @@
     <div class="card-body">
         @using (Html.BeginForm("Index", "Product", FormMethod.Get))
         {
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="col-md-offset-0">
-                        <input type="text" name="searchString" value="@ViewBag.ChuoiTimKiem" />
-                        <input type="submit" value="Tìm kiếm" class="btn btn-primary" />
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-md-offset-0">
+                            <input type="text" name="searchString" value="@ViewBag.ChuoiTimKiem" />
+                            <input type="submit" value="Tìm kiếm" class="btn btn-outline-primary" />
+                            <a href="product/Create" role="button" class="btn btn-outline-primary">Thêm mới</a>
+
+                        </div>
                     </div>
                 </div>
             </div>
-        }
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-md-offset-0">
+
+                </div>
+            </div>
+        </div>
         <table id="example2" class="table table-bordered table-hover">
             <thead>
                 <tr>
@@ -39,40 +50,48 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                <tr>
+                    <tr>
 
-                    <td>@item.Name</td>
-                    <td>@item.Code</td>
-                    <td> <img src="@item.Image" style="height:105px;width:105px;"></td>
-                    <td>@item.CategoryID</td>
-                    <td>@item.Price</td>
-                    <td><a href="#" class="btn-active" data-id="@item.ID">@(item.Status? "Hiển thị" : "Ẩn")</a></td>
-                    
-                    <td>
-                        
-                        <a href="product/Edit/@item.ID" role="button" class=" btn btn-warning">Sửa</a>
+                        <td>@item.Name</td>
+                        <td>@item.Code</td>
+                        <td> <img src="@item.Image" style="height:105px;width:105px;"></td>
+                        <td>@item.CategoryID</td>
+                        <td>@item.Price</td>
+                        <td><a href="#" class="btn-active" data-id="@item.ID">@(item.Status ? "Hiển thị" : "Ẩn")</a></td>
 
-                        <button href="#" class="btn btn-warning" role="button">
-                            
-                            @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
-                            {
+                        <td>
 
-                                Confirm = "Bạn có muốn xóa sản phẩm này?",
-                            OnComplete = "$('#row_" + item.ID + "').remove()",
-                            HttpMethod = "Delete"
-                            })
-                        </button>
-                    </td>
-                    
-                </tr>
+                            <a href="product/Edit/@item.ID" role="button" class=" btn btn-warning">
+                                Sửa
+                            </a>
+
+                            <button href="#" class="btn btn-warning" role="button">
+
+                                @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
+                           {
+
+                               Confirm = "Bạn có muốn xóa sản phẩm này?",
+                               OnComplete = "$('#row_" + item.ID + "').remove()",
+                               HttpMethod = "Delete"
+                           })
+                            </button>
+                        </td>
+
+                    </tr>
                 }
             </tbody>
         </table>
-        @Html.PagedListPager(Model, page => Url.Action("Index", new
-        {
-            page,
-       @searchString = ViewBag.ChuoiTimKiem
-   }))
+
+        
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @searchString = ViewBag.ChuoiTimKiem }))
+      
+        @*<style>
+            .MenuTrang {
+                display: inline;
+                text-align: center;
+                color: red;
+            
+        </style>*@
+        } </div>
+        <!-- /.table-responsive -->
     </div>
-    <!-- /.table-responsive -->
-</div>

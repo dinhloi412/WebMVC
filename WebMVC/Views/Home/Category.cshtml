@@ -1,0 +1,22 @@
+﻿@model List<KetNoiCSDL.EF.Category>
+<div class="tab-slider swiper-container slider-nav-style-1 small-nav">
+    <ul class="product-tab-nav nav swiper-wrapper ">
+        @foreach (var item in Model)
+        {
+            <li class="nav-item swiper-slide">
+                <a class="nav-link active" data-bs-toggle="tab"
+                   href="/san-pham/@item.MetaTitle">
+                    <img src="~/assets/images/icons/jewelry-icon.png"
+                         alt=""><span>@item.Name</span>
+                    </a>
+                </li>
+            }
+    </ul>
+    <div class="swiper-buttons">
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</div>
+
+
+        <!-- Add Arrows -->

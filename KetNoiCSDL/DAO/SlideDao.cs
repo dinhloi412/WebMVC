@@ -7,17 +7,16 @@ using System.Threading.Tasks;
 
 namespace KetNoiCSDL.DAO
 {
-    
-    public class MenuDao
+   public class SlideDao
     {
         BanHangOnlineDbContext db = null;
-        public MenuDao()
+        public SlideDao()
         {
             db = new BanHangOnlineDbContext();
         }
-        public List<Menu>ListByGroupId(int groupId)
+        public List<Slide> ListAll()
         {
-            return db.Menus.Where(x => x.TypeID == groupId &&x.Status==true).OrderBy(x=>x.DisplayOrder).ToList();
+            return db.Slides.Where(x => x.Status == true).OrderBy(y => y.DisplayOrder).ToList();
         }
     }
 }

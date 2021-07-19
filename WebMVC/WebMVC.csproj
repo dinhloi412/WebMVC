@@ -156,6 +156,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Anh\1.jpg" />
+    <Content Include="Anh\2.jpg" />
+    <Content Include="Anh\2021-07-16_154856.png" />
+    <Content Include="Anh\3.jpg" />
+    <Content Include="Anh\add.jpg" />
     <Content Include="Areas\Admin\assets\admin\dist\css\adminlte.css" />
     <Content Include="Areas\Admin\assets\admin\dist\css\adminlte.min.css" />
     <Content Include="Areas\Admin\assets\admin\dist\css\alt\adminlte.components.css" />
@@ -3504,6 +3509,8 @@
     <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3517,6 +3524,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Scripts.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -3530,13 +3538,12 @@
     <Content Include="Views\Shared\MainMenu.cshtml" />
     <Content Include="Views\Shared\TopMenu.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Home\Category.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Anh\" />
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Areas\Admin\Views\ProductCategory\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

@@ -18,6 +18,10 @@ namespace KetNoiCSDL.DAO
         {
             return db.Categories.Where(x => x.Status == true).ToList();
         }
+        public List<Category> ListAll1()
+        {
+            return db.Categories.Where(x => x.Status == true).OrderBy(x => x.DisplayOrder).ToList();
+        }
     }
 
 }

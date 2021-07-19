@@ -11,6 +11,10 @@ namespace KetNoiCSDL.EF
     [Table("Product")]
     public partial class Product
     {
+        public Product()
+        {
+            Image = "/Anh/add.jpg";
+        }
         public long ID { get; set; }
 
         [StringLength(250)]
@@ -21,6 +25,11 @@ namespace KetNoiCSDL.EF
 
         [StringLength(250)]
         public string MetaTitle { get; set; }
+
+        public long Insert(object user)
+        {
+            throw new NotImplementedException();
+        }
 
         [StringLength(500)]
         public string Description { get; set; }
@@ -70,6 +79,6 @@ namespace KetNoiCSDL.EF
         public DateTime? TopHot { get; set; }
 
         public int? ViewCount { get; set; }
-
+       
     }
 }

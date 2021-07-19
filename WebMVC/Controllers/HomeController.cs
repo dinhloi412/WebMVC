@@ -12,6 +12,9 @@ namespace WebMVC.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            ViewBag.TuiFeaturePro = new ProductDao().FeatureProList(4);
+            ViewBag.TuiNewPro = new ProductDao().NewProList(4);
+            ViewBag.TuiSlide = new SlideDao().ListAll();
             return View();
         }
         [ChildActionOnly]
@@ -29,6 +32,18 @@ namespace WebMVC.Controllers
         public ActionResult Footer()
         {
             var model = new FooterDao().GetFooter();
+            return PartialView(model);
+        }
+        [ChildActionOnly]
+       public ActionResult ProductCategory()
+        {
+            var model = new ProductCategoryDao().ListAll1();
+            return PartialView(model);
+        }
+        [ChildActionOnly]
+        public ActionResult Category()
+        {
+            var model = new CategoryDao().ListAll1();
             return PartialView(model);
         }
     }

@@ -66,6 +66,7 @@
     <Compile Include="DAO\MenuDao.cs" />
     <Compile Include="DAO\ProductCategoryDao.cs" />
     <Compile Include="DAO\ProductDao.cs" />
+    <Compile Include="DAO\SlideDao.cs" />
     <Compile Include="DAO\UserDao.cs" />
     <Compile Include="EF\About.cs" />
     <Compile Include="EF\BanHangOnlineDbContext.cs" />

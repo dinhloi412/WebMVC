@@ -34,9 +34,10 @@ namespace KetNoiCSDL.DAO
                 product.Code = entity.Code;
                 product.MetaTitle = entity.MetaTitle;
                 product.Description = entity.Description;
-                product.Description = entity.Description;
                 product.Image = entity.Image;
+                product.Detail = entity.Detail;
                 product.Price = entity.Price;
+                product.PromotionPrice = entity.PromotionPrice;
                 product.Status = entity.Status;
                 db.SaveChanges();
                 return true;
@@ -49,6 +50,29 @@ namespace KetNoiCSDL.DAO
         public Product ViewDetail(int id)
         {
             return db.Products.Find(id);
+        }
+        public bool Delete(int id)
+        {
+            try
+            {
+                var product = db.Products.Find(id);
+                db.Products.Remove(product);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public List<Product> NewProList(int numpro)
+        {
+            return db.Products.Where(x => x.Status == true).OrderByDescending(x => x.CreatedDate).Take(numpro).ToList();
+        }
+        public List<Product> FeatureProList(int numpro)
+        {
+            return db.Products.Where(x => x.Status == true).OrderByDescending(x =>
+            x.ViewCount).Take(numpro).ToList();
         }
     }
 }
