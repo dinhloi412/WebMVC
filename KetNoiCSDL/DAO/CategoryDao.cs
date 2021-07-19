@@ -22,6 +22,8 @@ namespace KetNoiCSDL.DAO
         {
             return db.Categories.Where(x => x.Status == true).OrderBy(x => x.DisplayOrder).ToList();
         }
+         
+      
     }
 
 }

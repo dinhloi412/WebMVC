@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "DanhMucSP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var dmsp = (List<KetNoiCSDL.EF.ProductCategory>)ViewBag.DmSp;
+}
+ <h1>Danh mục sản phẩm</h1>
+<a>-----------------------</a>
+@foreach (var item in dmsp)
+{
+    <h3>@item.Name</h3>
+    <a>-----------------------</a>
+}
+

@@ -62,6 +62,10 @@ namespace KetNoiCSDL.DAO
         {
             return db.ProductCategories.Where(x => x.Status == true).OrderBy(x => x.DisplayOrder).ToList();
         }
+        public List<ProductCategory> DStheoID(long id)
+        {
+            return db.ProductCategories.Where(x => x.ParentID == id).ToList();
+        }
 
     }
 }

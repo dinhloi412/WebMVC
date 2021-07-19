@@ -12,6 +12,7 @@ namespace WebMVC.Controllers
         // GET: Home
         public ActionResult Index()
         {
+
             ViewBag.TuiFeaturePro = new ProductDao().FeatureProList(4);
             ViewBag.TuiNewPro = new ProductDao().NewProList(4);
             ViewBag.TuiSlide = new SlideDao().ListAll();

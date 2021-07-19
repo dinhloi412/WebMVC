@@ -4,10 +4,8 @@
         @foreach (var item in Model)
         {
             <li class="nav-item swiper-slide">
-                <a class="nav-link active" data-bs-toggle="tab"
-                   href="/san-pham/@item.MetaTitle">
-                    <img src="~/assets/images/icons/jewelry-icon.png"
-                         alt=""><span>@item.Name</span>
+                <a  href="san-pham/@item.MetaTitle-@item.ParentID">@item.Name
+                    @*<img src="~/assets/images/icons/jewelry-icon.png" alt=""><span>@item.Name</span>*@
                     </a>
                 </li>
             }

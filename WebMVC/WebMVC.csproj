@@ -149,7 +149,10 @@
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\MaHoaMd5.cs" />
     <Compile Include="Common\UserLogin.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductCategoryController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -3539,12 +3542,15 @@
     <Content Include="Views\Shared\TopMenu.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\Home\Category.cshtml" />
+    <Content Include="Views\ProductCategory\DanhMucSP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Category\" />
+    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
