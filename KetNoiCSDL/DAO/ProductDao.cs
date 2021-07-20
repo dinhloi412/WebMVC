@@ -71,8 +71,29 @@ namespace KetNoiCSDL.DAO
         }
         public List<Product> FeatureProList(int numpro)
         {
-            return db.Products.Where(x => x.Status == true).OrderByDescending(x =>
-            x.ViewCount).Take(numpro).ToList();
+            return db.Products.Where(x => x.Status == true).OrderByDescending(x => x.ViewCount).Take(numpro).ToList();
+        }
+        public Product ViewDetail(long id)
+        {
+            return db.Products.Find(id);
+        }
+        public List<Product> ListRelatedProduct(long productID)
+        {
+            var product = db.Products.Find(productID);
+            return db.Products.Where(x => x.ID != productID && x.CategoryID == product.CategoryID).ToList();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="categoryID"></param>
+        /// <returns></returns>
+        public List<Product> ListByCategoryID(long categoryID)
+        {
+            return db.Products.Where(x => x.CategoryID == categoryID).ToList();
+        }
+        public List<Product> ListByCategoryID1(long categoryID)
+        {
+            return db.Products.Where(x => x.CategoryID == categoryID).ToList();
         }
     }
 }

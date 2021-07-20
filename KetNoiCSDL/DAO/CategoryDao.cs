@@ -22,8 +22,11 @@ namespace KetNoiCSDL.DAO
         {
             return db.Categories.Where(x => x.Status == true).OrderBy(x => x.DisplayOrder).ToList();
         }
-         
-      
+
+        public ProductCategory viewDetail1(long id)
+        {
+            return db.ProductCategories.Find(id);
+        }
     }
 
 }

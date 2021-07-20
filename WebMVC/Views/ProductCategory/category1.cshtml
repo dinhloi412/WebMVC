@@ -1,0 +1,105 @@
+﻿@model List<KetNoiCSDL.EF.ProductCategory>
+@{
+    ViewBag.Title = "category1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var category = (KetNoiCSDL.EF.ProductCategory)ViewBag.Category;
+}
+
+<div class="blog-grid pb-100px pt-100px main-blog-page single-blog-page">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                var url = "/loai-san-pham/"+ item.MetaTitle + "-" + item.ParentID;
+                <div class="col-lg-6 col-md-6 col-xl-4 mb-50px">
+                    <div class="single-blog">
+                        <div class="blog-image">
+                            <a href="@url">
+                                <img src="assets/images/blog-image/1.jpg"
+                                     class="img-responsive w-100" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-text">
+                            @*<div class="blog-athor-date">
+                                <span> By,<a class="blog-author cercle-shape" href="#"> June Cha</a></span>
+                                <span class="blog-date" href="#">25 May, 2121</span>
+                            </div>*@
+                            <h5 class="blog-heading">
+                                <a class="blog-heading-link"
+                                   href="@url">@item.Name</a>
+                            </h5>
+
+                            <p>
+                               @item.MetaDescription
+                            </p>
+
+                            <a href="@url" class="btn btn-primary blog-btn"> Xem các sản phẩm</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <!-- End single blog -->
+
+        </div>
+
+        <!--  Pagination Area Start -->
+        <div class="pro-pagination-style text-center mt-0 mb-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="pages">
+                <ul>
+                    <li class="li"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
+                    <li class="li"><a class="page-link active" href="#">1</a></li>
+                    <li class="li"><a class="page-link" href="#">2</a></li>
+                    <li class="li"><a class="page-link" href="#">3</a></li>
+                    <li class="li">
+                        <a class="page-link" href="#"><i class="fa fa-angle-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--  Pagination Area End -->
+    </div>
+</div>
+<!-- Blag Area End -->
+
+
+
+<div class="newsletter-area ">
+    <div class="container line-shape-bottom">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="newsletter-content mb-lm-30px">
+                    <i class="pe-7s-mail-open-file"></i>
+                    <div class="newsletter-text">
+                        <h3 class="title">Newsletter & Get Updates</h3>
+                        <p>Sign up for our newsletter to get update from us</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="news-letter-form">
+                    <div id="mc_embed_signup" class="subscribe-form">
+                        <form id="mc-embedded-subscribe-form" class="validate" novalidate="" target="_blank"
+                              name="mc-embedded-subscribe-form" method="post"
+                              action="http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef">
+                            <div id="mc_embed_signup_scroll" class="mc-form">
+                                <input class="email" type="email" required=""
+                                       placeholder="Enter Your Mail Here......." name="EMAIL" value="">
+                                <div class="mc-news d-none" aria-hidden="true">
+                                    <input type="text" value="" tabindex="-1"
+                                           name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef">
+                                </div>
+                                <div class="clear">
+                                    <button id="mc-embedded-subscribe" class="button" type="submit" name="subscribe"
+                                            value="">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

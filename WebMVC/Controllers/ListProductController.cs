@@ -7,20 +7,12 @@ using System.Web.Mvc;
 
 namespace WebMVC.Controllers
 {
-    public class ProductController : Controller
+    public class ListProductController : Controller
     {
-        // GET: Product
+        // GET: ListProduct
         public ActionResult Index()
         {
             return View();
-        }
-        
-        public ActionResult Detail(long cateId)
-        {
-            var product = new ProductDao().ViewDetail(cateId);
-            ViewBag.Category = new ProductCategoryDao().ViewDDDD(product.CategoryID.Value);
-            ViewBag.ListRelatedProduct = new ProductDao().ListRelatedProduct(cateId);
-            return View(product);
         }
         public ActionResult ListProduct(long cateId)
         {
@@ -29,6 +21,5 @@ namespace WebMVC.Controllers
             var model = new ProductDao().ListByCategoryID1(cateId);
             return View(model);
         }
-
     }
 }

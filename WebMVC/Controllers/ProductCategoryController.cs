@@ -14,10 +14,13 @@ namespace WebMVC.Controllers
         {
             return View();
         }
-        public ActionResult DanhMucSP(long id)
+        public ActionResult category1(long cateId)
         {
-            ViewBag.DmSp = new ProductCategoryDao().DStheoID(id);
-            return View();
+            var category = new CategoryDao().viewDetail1(cateId);
+            ViewBag.Category = category;
+            var model = new ProductCategoryDao().ViewDetails(cateId);
+            return View(model);
         }
+
     }
 }
