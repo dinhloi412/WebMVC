@@ -19,11 +19,9 @@ namespace KetNoiCSDL.DAO
             IQueryable<Product> model = db.Products;
             if (!string.IsNullOrEmpty(searchString))
             {
-                model = model.Where(x => x.Name.Contains(searchString) ||
-                x.Name.Contains(searchString));
+                model = model.Where(x => x.Name.Contains(searchString) ||x.Name.Contains(searchString));
             }
-            return model.OrderByDescending(x => x.CreatedDate).ToPagedList(page,
-            pageSize);
+            return model.OrderByDescending(x => x.CreatedDate).ToPagedList(page, pageSize);
         }
         public bool Update(Product entity)
         {

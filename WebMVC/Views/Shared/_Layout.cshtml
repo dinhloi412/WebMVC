@@ -44,7 +44,7 @@
                 <div class="row">
                     <div class="col-auto align-self-center">
                         <div class="header-logo">
-                            <a href="index.html"><img src="~/assets/images/logo/logo.png" alt="Site Logo" /></a>
+                            <a href="/" ref="nofollow"><img src="~/assets/images/logo/logo.png" alt="Site Logo" /></a>
                         </div>
                     </div>
                     <div class="col align-self-center d-none d-lg-block">
@@ -533,6 +533,7 @@
     <script src="~/assets/js/plugins/plugins.min.js"></script> -->
     <!-- Main Js -->
     <script src="~/assets/js/main.js"></script>
+    @RenderSection("jsFooter", required: false)
 </body>
 
 </html>

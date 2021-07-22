@@ -11,7 +11,7 @@ namespace WebMVC.Models
     {
        
         public  Product  Product{ set; get; }
-        public long Quantity { set; get; }
+        public int Quantity { set; get; }
          
     }
 }
