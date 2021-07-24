@@ -20,7 +20,7 @@
 
 /*-- Google Font --*/
 
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:wght@300;400;500;600;700&display=swap");
 
 /*-- Common Style --*/
 
@@ -55,7 +55,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $Rubik;
+	font-family: $Roboto;
 	color: $heading-color;
 }
 
@@ -339,7 +339,7 @@ input {
 .section-title {
 	.title {
 		font-size: 36px;
-		font-family: $Rubik;
+		font-family: $Roboto;
 		font-weight: 500;
 		display: inline-block;
 		color: #424242;

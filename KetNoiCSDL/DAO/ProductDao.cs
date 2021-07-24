@@ -93,5 +93,12 @@ namespace KetNoiCSDL.DAO
         {
             return db.Products.Where(x => x.CategoryID == categoryID).ToList();
         }
+
+
+        public IEnumerable<Product> ListAllPage(int page, int pageSize)
+        {
+            return db.Products.OrderByDescending(x => x.CreatedDate).ToPagedList(page,
+            pageSize);
+        }
     }
 }

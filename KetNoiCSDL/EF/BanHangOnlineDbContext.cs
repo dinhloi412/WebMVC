@@ -158,5 +158,7 @@ namespace KetNoiCSDL.EF
                 .Property(e => e.ModifieldBy)
                 .IsUnicode(false);
         }
+
+        object placeHolderVariable;
     }
 }

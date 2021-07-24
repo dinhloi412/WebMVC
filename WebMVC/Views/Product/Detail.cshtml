@@ -53,7 +53,7 @@
             </div>
             <div class="col-lg-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="200">
                 <div class="product-details-content quickview-content ml-25px">
-                    <h2>Hand-Made Garlic Mortar</h2>
+                    <h2>@Model.Name</h2>
                     <div class="pricing-meta">
                         <ul class="d-flex">
                             <li class="new-price"> @(Model.Price.HasValue?Model.Price.Value.ToString("N0"):"Liên hệ")</li>
@@ -70,32 +70,16 @@
                         </div>
                         <span class="read-review"><a class="reviews" href="#">( 2 Review )</a></span>
                     </div>
-                    <div class="stock mt-30px">
-                        <span class="avallabillty">
-                            Availability: <span class="in-stock">
-                                <i class="fa fa-check"></i>In Stock
-                            </span>
-                        </span>
-                    </div>
+                    
                     <p class="mt-30px mb-0">
                       @Model.Description
                     </p>
                     <div class="pro-details-quality">
-                        <div class="cart-plus-minus">
-                            <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1" />
+                        
+                        <div class="add-to-cart">
+                            <a class="button" href="/them-gio-hang?productID=@Model.ID&quantity=1">Thêm vào giỏ hàng</a>
                         </div>
-                        <div class="pro-details-cart">
-                            <button class="add-cart">
-                                Add To
-                                Cart
-                            </button>
-                        </div>
-                        <div class="pro-details-cart">
-                            <button class="add-cart buy-button"> Buy It Now</button>
-                        </div>
-                        <div class="pro-details-compare-wishlist pro-details-wishlist ">
-                            <a href="wishlist.html"><i class="pe-7s-like"></i></a>
-                        </div>
+                      
                     </div>
                     <div class="pro-details-categories-info pro-details-same-style d-flex">
                         <span>Categories: </span>
@@ -146,21 +130,12 @@
     <div class="container">
         <div class="description-review-wrapper">
             <div class="description-review-topbar nav">
-                <a data-bs-toggle="tab" href="#des-details2">Information</a>
+                
                 <a class="active" data-bs-toggle="tab" href="#des-details1">Description</a>
-                <a data-bs-toggle="tab" href="#des-details3">Reviews (02)</a>
+               
             </div>
             <div class="tab-content description-review-bottom">
-                <div id="des-details2" class="tab-pane">
-                    <div class="product-anotherinfo-wrapper text-start">
-                        <ul>
-                            <li><span>Weight</span> 400 g</li>
-                            <li><span>Dimensions</span>10 x 10 x 15 cm</li>
-                            <li><span>Materials</span> 60% cotton, 40% polyester</li>
-                            <li><span>Other Info</span> American heirloom jean shorts pug seitan letterpress</li>
-                        </ul>
-                    </div>
-                </div>
+                
                 <div id="des-details1" class="tab-pane active">
                     <div class="product-description-wrapper">
                         <p>
@@ -170,116 +145,7 @@
                         </p>
                     </div>
                 </div>
-                <div id="des-details3" class="tab-pane">
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <div class="review-wrapper">
-                                <div class="single-review">
-                                    <div class="review-img">
-                                        <img src="assets/images/review-image/1.png" alt="" />
-                                    </div>
-                                    <div class="review-content">
-                                        <div class="review-top-wrap">
-                                            <div class="review-left">
-                                                <div class="review-name">
-                                                    <h4>White Lewis</h4>
-                                                </div>
-                                                <div class="rating-product">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                            </div>
-                                            <div class="review-left">
-                                                <a href="#">Reply</a>
-                                            </div>
-                                        </div>
-                                        <div class="review-bottom">
-                                            <p>
-                                                Vestibulum ante ipsum primis aucibus orci luctustrices posuere
-                                                cubilia Curae Suspendisse viverra ed viverra. Mauris ullarper
-                                                euismod vehicula. Phasellus quam nisi, congue id nulla.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-review child-review">
-                                    <div class="review-img">
-                                        <img src="assets/images/review-image/2.png" alt="" />
-                                    </div>
-                                    <div class="review-content">
-                                        <div class="review-top-wrap">
-                                            <div class="review-left">
-                                                <div class="review-name">
-                                                    <h4>White Lewis</h4>
-                                                </div>
-                                                <div class="rating-product">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                            </div>
-                                            <div class="review-left">
-                                                <a href="#">Reply</a>
-                                            </div>
-                                        </div>
-                                        <div class="review-bottom">
-                                            <p>
-                                                Vestibulum ante ipsum primis aucibus orci luctustrices posuere
-                                                cubilia Curae Sus pen disse viverra ed viverra. Mauris ullarper
-                                                euismod vehicula.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-5">
-                            <div class="ratting-form-wrapper pl-50">
-                                <h3>Add a Review</h3>
-                                <div class="ratting-form">
-                                    <form action="#">
-                                        <div class="star-box">
-                                            <span>Your rating:</span>
-                                            <div class="rating-product">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="rating-form-style">
-                                                    <input placeholder="Name" type="text" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="rating-form-style">
-                                                    <input placeholder="Email" type="email" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="rating-form-style form-submit">
-                                                    <textarea name="Your Review" placeholder="Message"></textarea>
-                                                    <button class="btn btn-primary btn-hover-color-primary "
-                                                            type="submit" value="Submit">
-                                                        Submit
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -292,10 +158,7 @@
             <div class="col-12">
                 <div class="section-title text-center line-height-1">
                     <h2 class="title">Sản phẩm liên quan</h2>
-                    <p class="sub-title">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        incididunt ut labore et dolore magna aliqua.
-                    </p>
+                    
                 </div>
             </div>
         </div>
@@ -303,53 +166,11 @@
             <div class="new-product-wrapper swiper-wrapper">
                 <div class="new-product-item swiper-slide">
                     <!-- Single Prodect -->
-                    <div class="product">
-                        <div class="thumb">
-                            <a href="single-product.html" class="image">
-                                <img src="assets/images/product-image/9.jpg" alt="Product" />
-                                <img class="hover-image" src="assets/images/product-image/9.jpg" alt="Product" />
-                            </a>
-                            <span class="badges">
-                                <span class="new">New</span>
-                            </span>
-                            <div class="actions">
-                                <a href="wishlist.html" class="action wishlist" title="Wishlist">
-                                    <i class="pe-7s-like"></i>
-                                </a>
-                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view"
-                                   data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="pe-7s-look"></i>
-                                </a>
-                                <a href="compare.html" class="action compare" title="Compare">
-                                    <i class="pe-7s-refresh-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <span class="ratings">
-                                <span class="rating-wrap">
-                                    <span class="star" style="width: 100%"></span>
-                                </span>
-                                <span class="rating-num">( 5 Review )</span>
-                            </span>
-                            <h5 class="title">
-                                <a href="single-product.html">
-                                    Hand-Made Garlic Mortar
-                                </a>
-                            </h5>
-                            <span class="price">
-                                <span class="new">$38.50</span>
-                            </span>
-                        </div>
-                        <button title="Add To Cart" class=" add-to-cart">
-                            Add
-                            To Cart
-                        </button>
-                    </div>
+                    
                 </div>
                 @foreach (var item in RelatedProduct)
                 {
-                    var url = "/chi-tiet" + item.MetaTitle + "-" + item.ID;
+                    var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
                     <div class="new-product-item swiper-slide">
                         <!-- Single Prodect -->
                         <div class="product">
@@ -362,18 +183,7 @@
                                     <span class="sale">-10%</span>
                                     <span class="new">New</span>
                                 </span>
-                                <div class="actions">
-                                    <a href="wishlist.html" class="action wishlist" title="Wishlist">
-                                        <i class="pe-7s-like"></i>
-                                    </a>
-                                    <a href="#" class="action quickview" data-link-action="quickview" title="Quick view"
-                                       data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="pe-7s-look"></i>
-                                    </a>
-                                    <a href="compare.html" class="action compare" title="Compare">
-                                        <i class="pe-7s-refresh-2"></i>
-                                    </a>
-                                </div>
+                                
                             </div>
                             <div class="content">
                                 <span class="ratings">

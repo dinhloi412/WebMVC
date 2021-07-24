@@ -1,4 +1,7 @@
 ﻿@model List<KetNoiCSDL.EF.Menu>
+@{ var session = (WebMVC.Common.UserLogin)Session[WebMVC.Common.CommonConstants.USER_SESSION]; }
+@if(session == null)
+{
 <div class="header-bottom-set dropdown">
     <button class="dropdown-toggle header-action-btn" data-bs-toggle="dropdown">
         <i class="pe-7s-users"></i>
@@ -6,8 +9,16 @@
     <ul class="dropdown-menu dropdown-menu-right">
         @foreach (var item in Model)
         {
-            <li><a class="dropdown-item" href="@item.Link" target="@item.Target">@item.Text</a></li>
-        }
+<li><a class="dropdown-item" href="@item.Link" target="@item.Target">@item.Text</a></li>
+}
 
     </ul>
 </div>
+}
+else
+{
+<ul>
+    <li>Xin chào:@session.UserName</li>
+    <li>@Html.ActionLink("Thoát", "Logout", "User")</li>
+</ul>
+}

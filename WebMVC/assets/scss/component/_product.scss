@@ -207,7 +207,7 @@
 		transform: translateY(0);
 		color: $white;
 		opacity: 0;
-		font-family: $Rubik;
+		font-family: $Roboto;
 		text-transform: uppercase;
 		overflow: hidden;
 		&:hover {
@@ -372,7 +372,7 @@
 		& .title {
 			font-size: 16px;
 			margin: 10px 0 15px;
-			font-family: $Rubik;
+			font-family: $Roboto;
 			& a {
 				text-decoration: none;
 				color: #747474;
@@ -385,7 +385,7 @@
 		}
 		& .price {
 			font-size: 16px;
-			font-family: $Rubik;
+			font-family: $Roboto;
 			line-height: 1;
 			font-weight: 500;
 			&:not(:last-child) {

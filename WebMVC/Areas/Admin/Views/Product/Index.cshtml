@@ -41,7 +41,7 @@
                     <th>Tên</th>
                     <th>Code</th>
                     <th>Image</th>
-                    <th>Loại</th>
+                    <th>Ngày tạo</th>
                     <th>Giá</th>
                     <th>Tình trạng</th>
                     <th>#</th>
@@ -55,8 +55,8 @@
                         <td>@item.Name</td>
                         <td>@item.Code</td>
                         <td> <img src="@item.Image" style="height:105px;width:105px;"></td>
-                        <td>@item.CategoryID</td>
-                        <td>@item.Price</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@(item.Price.HasValue?item.Price.Value.ToString("N0"):"Liên hệ")</td>
                         <td><a href="#" class="btn-active" data-id="@item.ID">@(item.Status ? "Hiển thị" : "Ẩn")</a></td>
 
                         <td>

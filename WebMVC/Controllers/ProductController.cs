@@ -22,12 +22,11 @@ namespace WebMVC.Controllers
             ViewBag.ListRelatedProduct = new ProductDao().ListRelatedProduct(cateId);
             return View(product);
         }
-        public ActionResult ListProduct(long cateId)
+        public ActionResult ListProduct(int page = 1, int pageSize = 9)
         {
-            var category = new ProductCategoryDao().viewDetail1(cateId);
-            ViewBag.Category = category;
-            var model = new ProductDao().ListByCategoryID1(cateId);
-            return View(model);
+            var dao = new ProductDao();
+            var model = dao.ListAllPage(page, pageSize);
+            return View(model); 
         }
 
     }

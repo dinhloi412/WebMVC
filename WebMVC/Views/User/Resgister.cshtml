@@ -11,15 +11,13 @@
 @using (Html.BeginForm("Register", "User", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    <div class="login-register-area pt-100px pb-100px">
+    <div class="login-register-area pt-200px pb-200px">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 col-md-12 ml-auto mr-auto">
                     <div class="login-register-wrapper">
                         <div class="login-register-tab-list nav">
-                            <a class="active" data-bs-toggle="tab" href="#lg1">
-                                <h4>login</h4>
-                            </a>
+                            
                             <a data-bs-toggle="tab" href="#lg2">
                                 <h4>register</h4>
                             </a>
@@ -87,7 +85,7 @@
                                                 <div class="form-group">
                                                     @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
                                                     <div class="col-md-10">
-                                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @Html.TextBoxFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
                                                         @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                                     </div>
                                                 </div>
@@ -95,7 +93,7 @@
                                                 <div class="form-group">
                                                     @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
                                                     <div class="col-md-10">
-                                                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @Html.TextBoxFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
                                                         @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
                                                     </div>
                                                 </div>

@@ -23,7 +23,7 @@ namespace WebMVC
 
             routes.MapRoute(
                 name: "Product lisst",
-                url: "loai-san-pham/{metatitle}-{cateId}",
+                url: "loai-san-pham",
                 defaults: new { controller = "Product", action = "ListProduct", id = UrlParameter.Optional }
                , namespaces: new[] { "WebMVC.Controllers" }
             );
@@ -67,8 +67,13 @@ namespace WebMVC
             defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional }
            , namespaces: new[] { "WebMVC.Controllers" }
         );
-            routes.IgnoreRoute("{*botdetect}",
-            new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
+            routes.MapRoute(
+          name: "Login",
+          url: "dang-nhap",
+          defaults: new { controller = "User", action = "Login", id = UrlParameter.Optional }
+         , namespaces: new[] { "WebMVC.Controllers" }
+      );
+            routes.IgnoreRoute("{*botdetect}",new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
             routes.MapRoute(
            name: "dangky",
            url: "dang-ky",

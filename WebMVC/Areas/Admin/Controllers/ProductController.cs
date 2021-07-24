@@ -14,10 +14,11 @@ namespace WebMVC.Areas.Admin.Controllers
     public class ProductController : BaseController
     {
         // GET: Admin/Product
-        public ActionResult Index(string searchString, int page = 1, int pageSize = 5)
+        public ActionResult Index(string searchString, int page = 1, int pageSize = 15)
         {
             var dao = new ProductDao();
             var model = dao.ListAllPaging(searchString, page, pageSize);
+            ViewBag.SearchString = searchString;
             return View(model);
         }
         [HttpGet]
@@ -30,8 +31,7 @@ namespace WebMVC.Areas.Admin.Controllers
         public void SetViewBag(long? selectedID = null)
         {
             var dao = new ProductCategoryDao();
-            ViewBag.CategoryID = new SelectList(dao.ListAll(), "ID", "Name",
-            selectedID);
+            ViewBag.CategoryID = new SelectList(dao.ListAll(), "ID", "Name",selectedID);
         }
         [HttpPost]
         [ValidateInput(false)]
@@ -45,8 +45,10 @@ namespace WebMVC.Areas.Admin.Controllers
                 product.Image = "/Anh/" + filename;
                 filename = Path.Combine(Server.MapPath("/Anh/"), filename);
                 product.ImageFile.SaveAs(filename);
+                product.CreatedDate = DateTime.Now;
                 using (BanHangOnlineDbContext banHang = new BanHangOnlineDbContext())
                 {
+                    
                     banHang.Products.Add(product);
                     banHang.SaveChanges();
                     return RedirectToAction("Index");

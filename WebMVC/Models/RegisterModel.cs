@@ -10,14 +10,14 @@ namespace WebMVC.Models
     {
         [Key]
         public long ID { set; get; }
-        [Display(Name = "Tên đăng nhập")]
+        [Display(Name = "Tài khoản")]
         [Required(ErrorMessage = "Yêu cầu nhập tên đăng nhập")]
         public string UserName { set; get; }
-        [Display(Name = "Mật khẩu")]
+        [Display(Name = "Mật khẩu 1")]
         [StringLength(20, MinimumLength = 6, ErrorMessage = "Độ dài mật khẩu ít nhất 6 ký tự.")]
         [Required(ErrorMessage = "Yêu cầu nhập mật khẩu")]
         public string Password { set; get; }
-        [Display(Name = "Xác nhận mật khẩu")]
+        [Display(Name = "Mật khẩu 2")]
         [Compare("Password", ErrorMessage = "Xác nhận mật khẩu không đúng.")]
         public string ConfirmPassword { set; get; }
         [Display(Name = "Họ tên")]
